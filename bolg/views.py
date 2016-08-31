@@ -4,8 +4,8 @@ from django.contrib.gis.measure import D
 from django.http import HttpResponse
 from django.utils import timezone
 from datetime import datetime, timedelta
-from bolg.models import Post, Comment
-from bolg.serializers import PostSerializer, CommentSerializer, UserSerializer
+from bolg.models import Post
+from bolg.serializers import PostSerializer, UserSerializer
 from rest_framework import filters, viewsets, generics
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -37,9 +37,3 @@ class PostViewSet(viewsets.ModelViewSet):
                 break
             i += 1
         return self.result
-
-
-class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-    permission_classes = [IsAuthenticated]

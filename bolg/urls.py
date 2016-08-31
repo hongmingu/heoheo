@@ -6,7 +6,6 @@ from bolg import views
 
 router = DefaultRouter()
 router.register(r'posts', views.PostViewSet, base_name='posts')
-router.register(r'comments', views.CommentViewSet, base_name='comments')
 urlpatterns = router.urls
 
 

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from bolg.models import Post, Comment
+from bolg.models import Post
 from django.contrib.auth.models import User
 from drf_extra_fields.geo_fields import PointField
 

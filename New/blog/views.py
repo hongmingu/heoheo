@@ -19,4 +19,4 @@ class FacebookLogin(SocialLoginView):
 class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
-    queryset = Snippet.objects.all()
+    queryset = Post.objects.all()

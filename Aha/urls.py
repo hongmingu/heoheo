@@ -1,7 +1,7 @@
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from bolg import views
+from Aha import views
 
 
 router = DefaultRouter()

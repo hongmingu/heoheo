@@ -17,6 +17,6 @@ class Post(models.Model):
     point = models.PointField(blank=True, null=False)
 
     def __str__(self):              # __unicode__ on Python 2
-        return self.title
+        return self.text
     # GeoDjango-specific: a geometry field (MultiPolygonField)
     # Returns the string representation of the model.

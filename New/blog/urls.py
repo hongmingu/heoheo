@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import SimpleRouter
 from blog import views
 
 
-router = DefaultRouter()
+router = SimpleRouter()
 router.register(r'posts', views.PostViewSet, base_name='posts')
 urlpatterns = router.urls
 

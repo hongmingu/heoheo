@@ -10,7 +10,7 @@ class Post(models.Model):
     # world borders shapefile.
     author = models.ForeignKey(User, related_name='related_postwriter')
     text = models.TextField(null = True, blank = True)
-    image = models.ImageField(null = True, blank = Ture, upload_to='images')
+    image = models.ImageField(null = True, blank = True, upload_to='images')
     created_date = models.DateTimeField(
         default=timezone.now
         )

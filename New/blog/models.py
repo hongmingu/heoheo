@@ -9,8 +9,8 @@ class Post(models.Model):
     # Regular Django fields corresponding to the attributes in the
     # world borders shapefile.
     author = models.ForeignKey(User, related_name='related_postwriter')
-    text = models.TextField(blank = False)
-    image = models.ImageField(null = False, blank = False, upload_to='images')
+    text = models.TextField(null = True, blank = True)
+    image = models.ImageField(null = True, blank = Ture, upload_to='images')
     created_date = models.DateTimeField(
         default=timezone.now
         )

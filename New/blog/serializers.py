@@ -10,8 +10,9 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('username', 'email', 'related_postwriter')
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.HyperlinkedModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
+    image = serializers.HyperlinkedRelatedField(many=True, read_only=True)
     class Meta:
         model = Post
         fields = ('author', 'text', 'image')

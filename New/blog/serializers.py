@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('username', 'email', 'related_postwriter')
 
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     class Meta:
         model = Post

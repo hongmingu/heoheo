@@ -14,7 +14,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now
         )
-    point = models.PointField(blank=True, null=False)
+    point = models.PointField(blank=False, null=False)
 
     def __str__(self):              # __unicode__ on Python 2
         return self.text

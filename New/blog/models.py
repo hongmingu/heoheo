@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -14,6 +14,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now
         )
+    point = models.PointField(blank=True, null=False)
 
     def __str__(self):              # __unicode__ on Python 2
         return self.text

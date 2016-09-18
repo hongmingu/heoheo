@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from blog.models import Post
 from django.contrib.auth.models import User
-from drf_extra_fields.geo_fields import PointField
+# from drf_extra_fields.geo_fields import PointField
 
 
 class UserSerializer(serializers.ModelSerializer):

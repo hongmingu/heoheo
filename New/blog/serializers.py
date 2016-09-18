@@ -13,11 +13,11 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
-    # point = PointField(required=True) #이게 있는게 편한가 없는게 편한가 니가 결정
+    point = PointField(required=True) #이게 있는게 편한가 없는게 편한가 니가 결정
     class Meta:
         model = Post
-        fields = ('author', 'text', 'image')
-        # fields = ('author', 'text', 'image', 'point')
+        # fields = ('author', 'text', 'image', )
+        fields = ('author', 'text', 'image', 'point')
     def create(self, validated_data):
         validated_data['author'] = self.context['request'].user
         return super(PostSerializer, self).create(validated_data)

@@ -31,7 +31,7 @@ class PostViewSet(viewsets.ModelViewSet):
         i = 1
         while i<20:
             elasped_minutes = datetime.now() - timedelta(minutes=10*i)
-            list_i = Post.objects.filter(created_date__gte = elasped_minutes).filter(point__distance_lte = (userpoint, D(km=i)))
+            list_i = Post.objects.filter(created_date__gte = elasped_minutes).filter(point__distance_lte = (userpoint, D(km=i))).order_by("-created_time")
             [self.result.append(v) for v in list_i if v not in self.result]
             if len(self.result) > 10:
                 self.result = self.result[:8]

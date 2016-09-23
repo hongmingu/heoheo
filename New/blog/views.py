@@ -26,7 +26,7 @@ class PostViewSet(viewsets.ModelViewSet):
     def get_queryset(self) :
         lat = self.request.GET.get('user_lat', '15')
         lon = self.request.GET.get('user_lon', '13')
-        userpoint = GEOSGeometry('POINT(' + lat + ' ' + lon + ')', srid=4326)
+        userpoint = GEOSGeometry('POINT(' + lon + ' ' + lat + ')', srid=4326)
         self.result = []
         i = 1
         while i<20:

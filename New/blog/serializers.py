@@ -17,7 +17,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         # fields = ('author', 'text', 'image', )
-        fields = ('author', 'text', 'image', 'point')
+        fields = ('author', 'text', 'image', 'point', 'created_date')
     def create(self, validated_data):
         validated_data['author'] = self.context['request'].user
         return super(PostSerializer, self).create(validated_data)
